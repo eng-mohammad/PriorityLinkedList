@@ -11,28 +11,26 @@ package javaapplication5;
  */
 public class Node {
     
-    private Object oBject;
+    private Object object;
     private int priority;
     private Node next;
 
-    public Node(Object oBject, int priority) {
-        this.oBject = oBject;
-        this.priority = priority;
-        this.next = null;
+    public Node(Object object, int priority) {
+        this(object, priority, null);
     }
 
-    public Node(Object oBject, int priority, Node next) {
-        this.oBject = oBject;
+    public Node(Object object, int priority, Node next) {
+        this.object = object;
         this.priority = priority;
         this.next = next;
     }
 
     public Object getData() {
-        return oBject;
+        return object;
     }
 
-    public void setData(Object oBject) {
-        this.oBject = oBject;
+    public void setData(Object object) {
+        this.object = object;
     }
 
     public Node getNext() {
@@ -40,11 +38,7 @@ public class Node {
     }
     
     public boolean hasNext() {
-        if(next == null) {
-            return false;
-        }else{
-            return true;
-        }
+        return next != null;
     }
     
     public void setNext(Node next) {
@@ -61,7 +55,7 @@ public class Node {
 
     @Override
     public String toString() {
-        return oBject.toString();
+        return object.toString();
     }
 
 }
